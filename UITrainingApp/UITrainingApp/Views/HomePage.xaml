@@ -3,19 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UITrainingApp.Views.HomePage">
     <MasterDetailPage.Master>
-        <ContentPage Title="Home" >
-            <StackLayout Orientation="Vertical" BackgroundColor="#696969">
-                 <StackLayout VerticalOptions="Start">
-                    <Image Source="logo.png"/>
-                </StackLayout>
+        <ContentPage Title="Home" BackgroundColor="#443E43" >
+            <StackLayout Orientation="Vertical" >
+                 <StackLayout VerticalOptions="Start" Margin="30,100,30,20">
+                    <Image Source="logo.png" />
+                 </StackLayout>
 
                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
                    
                     <StackLayout Padding="10" Spacing="30" Orientation="Vertical">
-                          <Image Source="shop.png" WidthRequest="20"/>
-                          <Image Source="banktransfer.png" WidthRequest="20"/>
-                          <Image Source="cart.png" WidthRequest="20"/>
-                          <Image Source="shop.png" WidthRequest="20"/>
+                          <Image Margin="" Source="account.png" WidthRequest="20"/>
+                          <Image Source="shopcart.png" WidthRequest="20"/>
+                          <Image Source="faq.png" WidthRequest="20"/>
+                          <Image Source="bell.png" WidthRequest="20"/>
                    </StackLayout>
 
 
@@ -24,8 +24,8 @@
                             <DataTemplate>
                                 <ViewCell >
                                     <StackLayout Orientation="Horizontal">
-                                        <Label  Text="{Binding Title}"  TextColor="White"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                        <Label Text="{Binding Number}"  TextColor="White"  HorizontalOptions="End" VerticalOptions="Center"/>
+                                        <Label  Text="{Binding Title}" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Number}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
@@ -34,13 +34,15 @@
                    
                 </StackLayout>
 
-
-                <Image Source="leftarrow.png" VerticalOptions="End" HorizontalOptions="Start" WidthRequest="50"/>
-
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <Image Source="arrow.png" VerticalOptions="End" HorizontalOptions="Start" WidthRequest="20"/>
+                <Label Text="  LOG OUT" TextColor="White" FontSize="Small"/>
+                </StackLayout>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
-      <MasterDetailPage.Detail>
+    
+    <MasterDetailPage.Detail>
         <ContentPage></ContentPage>
         
     </MasterDetailPage.Detail>
