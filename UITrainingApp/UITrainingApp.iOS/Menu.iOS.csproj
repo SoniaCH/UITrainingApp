@@ -123,9 +123,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\UITrainingApp\UITrainingApp.csproj">
-      <Project>{9EE4339C-BBB4-4D6F-88B8-D45AC161D5F2}</Project>
-      <Name>UITrainingApp</Name>
+    <ProjectReference Include="..\UITrainingApp\Menu.csproj">
+      <Project>{C778B957-6FE4-459D-8A8A-998C22DD737D}</Project>
+      <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

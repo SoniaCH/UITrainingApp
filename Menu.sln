@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITrainingApp.Android", "UITrainingApp\UITrainingApp.Android\UITrainingApp.Android.csproj", "{61FF6BE3-530A-468C-896F-4EBE0B6B1E7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.Android", "UITrainingApp\UITrainingApp.Android\Menu.Android.csproj", "{61FF6BE3-530A-468C-896F-4EBE0B6B1E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITrainingApp.iOS", "UITrainingApp\UITrainingApp.iOS\UITrainingApp.iOS.csproj", "{1B447C7A-A8BB-4C44-AF9C-C330EFF92922}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.iOS", "UITrainingApp\UITrainingApp.iOS\Menu.iOS.csproj", "{1B447C7A-A8BB-4C44-AF9C-C330EFF92922}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UITrainingApp", "UITrainingApp\UITrainingApp\UITrainingApp.csproj", "{C778B957-6FE4-459D-8A8A-998C22DD737D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu", "UITrainingApp\UITrainingApp\Menu.csproj", "{C778B957-6FE4-459D-8A8A-998C22DD737D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

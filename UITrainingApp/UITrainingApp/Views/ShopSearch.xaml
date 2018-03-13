@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UITrainingApp.Views.ShopSearch">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+
+            <ListView x:Name="ListItems" RowHeight="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}"/>
+                                <StackLayout Orientation="Vertical">
+                                      <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                      <Label Text="{Binding Description}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                                      <Label Text="{Binding Price}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

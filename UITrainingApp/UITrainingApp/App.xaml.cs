@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UITrainingApp.Views;
 
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace UITrainingApp
 		{
 			InitializeComponent();
 
-			MainPage = new UITrainingApp.Views.HomePage();
+            MainPage = new HomePage();
 		}
 
 		protected override void OnStart ()

@@ -27,7 +27,10 @@ namespace UITrainingApp.Views
 
         public HomePage ()
 		{
-            Detail = new NavigationPage(new DetailPage());
+            Detail = new NavigationPage(new DetailPage())
+            {
+                BarBackgroundColor = Color.FromHex("#DBB34A")
+            };
             InitializeComponent();
             IsPresented = true;
 
@@ -38,36 +41,53 @@ namespace UITrainingApp.Views
 
         }
 
+        #region to navigate from page to page
+
         void GoToPage(object sender, EventArgs e)
         {
             var Page = ListView1.SelectedItem as Pages;
 
             if (Page.Id == "1")
             {
-                Detail = new NavigationPage(new MyAccountPage());
+                Detail = new NavigationPage(new MyAccountPage())
+                {
+                    BarBackgroundColor = Color.FromHex("#DBB34A"),
+                    BackgroundImage ="background.png"
+                };
                 IsPresented = false;
             }
         
             else if (Page.Id == "2")
             {
-                Detail = new NavigationPage(new ShopPage());
+                Detail = new NavigationPage(new ShopPage())
+                {
+                    BarBackgroundColor = Color.FromHex("#DBB34A")
+                };
                 IsPresented = false;
             }
 
             else if (Page.Id == "3")
             {
-                Detail = new NavigationPage(new FAQpage());
+                Detail = new NavigationPage(new FAQpage())
+                {
+                    BarBackgroundColor = Color.FromHex("#DBB34A"),
+                    BarTextColor= Color.FromHex("#FFFFFF")
+
+                };
                 IsPresented = false;
             }
 
             else
             {
-                Detail = new NavigationPage(new Notification());
+                Detail = new NavigationPage(new Notification())
+                {
+                    BarBackgroundColor = Color.FromHex("#DBB34A")
+                };
                 IsPresented = false;
             }
 
-            DisplayAlert("Item Selected", Page.Id , "Ok");
         }
+        #endregion
 
         #region Class to load the menu list
         public List<Pages> LoadTheListOfPages()
