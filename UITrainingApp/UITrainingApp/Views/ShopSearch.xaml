@@ -6,13 +6,13 @@
     <ContentPage.Content>
         <StackLayout  VerticalOptions="FillAndExpand" BackgroundColor="#80000000">
 
-            <StackLayout Margin="30,30,30,30" BackgroundColor="White">
-                <Label Text="Search" TextColor="Black"></Label>
-                <SearchBar TextChanged="SearchBar_TextChanged" ></SearchBar>
+             <StackLayout Margin="30" BackgroundColor="White">
+                <Label Margin="10,20,0,0" Text="Search" TextColor="Black"></Label>
+                <SearchBar TextChanged="SearchBar_TextChanged" Margin="0,0,0,20"></SearchBar>
              </StackLayout>
             
 
-              <ListView x:Name="ListItems" RowHeight="120" Margin="30,0,30,30" BackgroundColor="White">
+              <ListView x:Name="ListItems" RowHeight="120" Margin="30,0,30,30" BackgroundColor="White" VerticalOptions="Fill">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

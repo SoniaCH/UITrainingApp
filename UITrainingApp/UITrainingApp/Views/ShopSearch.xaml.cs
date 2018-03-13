@@ -47,8 +47,7 @@ namespace UITrainingApp.Views
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //thats all you need to make a search  
-
+              
             if (string.IsNullOrEmpty(e.NewTextValue))
             {
                 ListItems.ItemsSource = ItemList;
