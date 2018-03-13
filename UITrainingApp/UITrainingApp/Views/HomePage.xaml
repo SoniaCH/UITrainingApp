@@ -5,21 +5,21 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Home" >
             <StackLayout Orientation="Vertical" BackgroundColor="#696969">
-                 <StackLayout VerticalOptions="StartAndExpand">
+                 <StackLayout VerticalOptions="Start">
                     <Image Source="logo.png"/>
                 </StackLayout>
 
                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
                    
-                    <StackLayout Spacing="20" Orientation="Vertical">
-                          <Image Source="shop.png" WidthRequest="30"/>
-                          <Image Source="banktransfer.png" WidthRequest="30"/>
-                          <Image Source="cart.png" WidthRequest="30"/>
-                          <Image Source="shop.png" WidthRequest="30"/>
+                    <StackLayout Padding="10" Spacing="30" Orientation="Vertical">
+                          <Image Source="shop.png" WidthRequest="20"/>
+                          <Image Source="banktransfer.png" WidthRequest="20"/>
+                          <Image Source="cart.png" WidthRequest="20"/>
+                          <Image Source="shop.png" WidthRequest="20"/>
                    </StackLayout>
 
 
-                    <ListView x:Name="ListView1"  >
+                    <ListView x:Name="ListView1" RowHeight="50" ItemTapped="GoToPage">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell >

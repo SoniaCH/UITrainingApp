@@ -26,19 +26,9 @@ namespace UITrainingApp.Views
         List<Pages> _menu = new List<Pages>();
         public HomePage ()
 		{
-            Detail = new NavigationPage(new DetailPage());
+            Detail = new NavigationPage(new Notification());
             InitializeComponent();
-
-            //ListView1.ItemsSource = new string[]
-            //{
-            //    "My account",
-            //    "Shop",
-            //    "FAQ",
-            //    "Notifications"
-
-            //};
-
-            IsPresented = true;
+           IsPresented = true;
 
             PageList = LoadTheListOfPages();
             ListView1.ItemsSource = PageList;

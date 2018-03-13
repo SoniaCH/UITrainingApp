@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITrainingApp.Android", "UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITrainingApp.iOS", "UITrainingApp\UITrainingApp.iOS\UITrainingApp.iOS.csproj", "{1B447C7A-A8BB-4C44-AF9C-C330EFF92922}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITrainingApp", "UITrainingApp\UITrainingApp\UITrainingApp.csproj", "{C778B957-6FE4-459D-8A8A-998C22DD737D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UITrainingApp", "UITrainingApp\UITrainingApp\UITrainingApp.csproj", "{C778B957-6FE4-459D-8A8A-998C22DD737D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

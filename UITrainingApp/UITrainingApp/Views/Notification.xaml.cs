@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace UITrainingApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DetailPage : ContentPage
+	public partial class Notification : ContentPage
 	{
-		public DetailPage ()
+		public Notification ()
 		{
 			InitializeComponent ();
 		}
