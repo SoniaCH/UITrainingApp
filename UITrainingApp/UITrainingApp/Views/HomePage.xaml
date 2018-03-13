@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UITrainingApp.Views.HomePage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Home" >
+            <StackLayout Orientation="Vertical" BackgroundColor="#696969">
+                 <StackLayout VerticalOptions="StartAndExpand">
+                    <Image Source="logo.png"/>
+                </StackLayout>
+
+               <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                   
+                    <StackLayout Spacing="20" Orientation="Vertical">
+                          <Image Source="shop.png" WidthRequest="30"/>
+                          <Image Source="banktransfer.png" WidthRequest="30"/>
+                          <Image Source="cart.png" WidthRequest="30"/>
+                          <Image Source="shop.png" WidthRequest="30"/>
+                   </StackLayout>
+
+
+                    <ListView x:Name="ListView1"  >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label  Text="{Binding Title}"  TextColor="White"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Number}"  TextColor="White"  HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                   
+                </StackLayout>
+
+
+                <Image Source="leftarrow.png" VerticalOptions="End" HorizontalOptions="Start" WidthRequest="50"/>
+
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+      <MasterDetailPage.Detail>
+        <ContentPage></ContentPage>
+        
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
