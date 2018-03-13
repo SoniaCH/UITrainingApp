@@ -59,7 +59,7 @@ namespace UITrainingApp.Views
         
             else if (Page.Id == "2")
             {
-                Detail = new NavigationPage(new ShopPage())
+                Detail = new NavigationPage(new ShopSearch())
                 {
                     BarBackgroundColor = Color.FromHex("#DBB34A")
                 };

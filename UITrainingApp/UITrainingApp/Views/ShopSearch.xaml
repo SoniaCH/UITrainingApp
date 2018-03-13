@@ -1,29 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UITrainingApp.Views.ShopSearch">
+             x:Class="UITrainingApp.Views.ShopSearch"
+             Title="Search">
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+        <StackLayout  VerticalOptions="FillAndExpand" BackgroundColor="#80000000">
 
-            <ListView x:Name="ListItems" RowHeight="50">
+            <StackLayout Margin="30,30,30,30" BackgroundColor="White">
+                <Label Text="Search" TextColor="Black"></Label>
+                <SearchBar TextChanged="SearchBar_TextChanged" ></SearchBar>
+             </StackLayout>
+            
+
+              <ListView x:Name="ListItems" RowHeight="120" Margin="30,0,30,30" BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell >
+                        <ViewCell>
                             
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Image}"/>
-                                <StackLayout Orientation="Vertical">
-                                      <Label Text="{Binding Name}" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                      <Label Text="{Binding Description}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
-                                      <Label Text="{Binding Price}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" >
+                                <Image Margin="10,10,10,10" Source="{Binding Image}" HeightRequest="80"/>
+                                <StackLayout Orientation="Vertical" Margin="10,10,10,10">
+                                      <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                      <Label Text="{Binding Description}" TextColor="Gray" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                      <Label Text="{Binding Price}" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 </StackLayout>
                             </StackLayout>
                             
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-
-        </StackLayout>
+              </ListView>
+            
+      </StackLayout>
     </ContentPage.Content>
 </ContentPage>

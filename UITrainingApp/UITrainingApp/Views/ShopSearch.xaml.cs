@@ -35,12 +35,31 @@ namespace UITrainingApp.Views
 
         public List<Item> LoadTheListOfPages()
         {
-            _item.Add(new Item() { Id = "1", Image = "logo.png", Name = "Gucci hand bag light brown", Description="Almost new",Price="3000.00 SAR"  });
-            _item.Add(new Item() { Id = "2", Image = "logo.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR" });
-            _item.Add(new Item() { Id = "3", Image = "logo.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR" });
+            _item.Add(new Item() { Id = "1", Image = "handbag.png", Name = "Gucci hand bag light brown", Description="Almost new",Price="3000.00 SAR"  });
+            _item.Add(new Item() { Id = "2", Image = "Leather.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR" });
+            _item.Add(new Item() { Id = "3", Image = "holder.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR" });
 
             return _item;
         }
+
+
+        #region for the search bar 
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //thats all you need to make a search  
+
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                ListItems.ItemsSource = ItemList;
+            }
+
+            else
+            {
+                ListItems.ItemsSource = ItemList.Where(x => x.Name.StartsWith(e.NewTextValue));
+            }
+        }
+        #endregion
 
 
     }
