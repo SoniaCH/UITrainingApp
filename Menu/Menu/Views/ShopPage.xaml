@@ -33,7 +33,7 @@
                 </StackLayout>
             </ScrollView>
             <Frame>
-                <SearchBar TextChanged="SearchBar_TextChanged" Margin="0,0,0,20"></SearchBar>
+                <SearchBar TextChanged="OnSearch" Margin="0,0,0,20"></SearchBar>
             </Frame>
             <Grid>
                 <ListView x:Name="ListItems1" SeparatorVisibility="Default"  HasUnevenRows="True">

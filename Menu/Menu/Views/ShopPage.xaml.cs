@@ -29,6 +29,7 @@ namespace Menu.Views
 
         List<ItemPair> _item = new List<ItemPair>();
         List<Item> _itemcategorie = new List<Item>();
+        List<Item> _itemSearch = new List<Item>();
 
         List<ItemPair> _listFiltered = new List<ItemPair>();
 
@@ -260,54 +261,57 @@ namespace Menu.Views
 
         #region for the search bar 
 
-        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        private void OnSearch(object sender, TextChangedEventArgs e)
         {
 
-            //if (string.IsNullOrEmpty(e.NewTextValue))
-            //{
-            //    ListItems1.ItemsSource = ItemList;
-            //}
-
-            //else
-            //{
-
-            //    List<ItemPair> Alllist = new List<ItemPair>();
-
-            //    foreach (ItemPair p in ItemList)
-            //    {
-            //        if (p.Item2.Name.ToLower().Contains(e.NewTextValue.ToLower()))
-            //        {
-
-            //            // p.Item2.IsVisible = true;
-
-            //            Alllist.Add(p);
-            //        }
-            //        //else
-            //        //{
-            //        //   // p.Item2.IsVisible = false;
-
-
-            //        //}
-
-            //        if (p.Item1.Name.ToLower().Contains(e.NewTextValue.ToLower()))
-            //        {
-            //            // p.Item1.IsVisible = true;
-
-            //            Alllist.Add(p);
-            //        }
-
-            //        //else
-            //        //{
-            //        //    p.Item1.IsVisible = false;
-
-
-            //        //}
-
-
-            //        ListItems1.ItemsSource = Alllist;
-            //    }
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                ListItems1.ItemsSource = ItemList;
             }
-            #endregion
+
+            else
+            {
+
+                _itemSearch = new List<Item>();
+
+                foreach (var prod in ItemList)
+                {
+
+
+                    if (prod.Item1.Name.ToLower().Contains(e.NewTextValue.ToLower()))
+                    {
+                        _itemSearch.Add(prod.Item1);
+                        prod.Item2.IsVisible = false;
+                    }
+
+                    if (prod.Item2.Name.ToLower().Contains(e.NewTextValue.ToLower()))
+                    {
+                        _itemSearch.Add(prod.Item2);
+                        prod.Item1.IsVisible = false;
+                    }
+
+                }
+                ItemList = new List<ItemPair>();
+                for (int i = 0; i <= _itemSearch.Count; i = i + 2)
+                {
+                    if (i < _itemSearch.Count - 1)
+                    {
+                        ItemPair pp = new ItemPair(_itemSearch[i], _itemSearch[i + 1]);
+                        ItemList.Add(pp);
+                    }
+                    else if (i == _itemSearch.Count - 1)
+                    {
+                        ItemPair pp = new ItemPair(_itemSearch[i], null);
+                        ItemList.Add(pp);
+                    }
+                }
+
+                ListItems1.ItemsSource = ItemList;
+
+            }
+
+        }
+        #endregion
 
 
 
