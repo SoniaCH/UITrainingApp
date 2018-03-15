@@ -32,9 +32,9 @@
                     
                 </StackLayout>
             </ScrollView>
-            <Frame>
-                <SearchBar TextChanged="OnSearch" Margin="0,0,0,20"></SearchBar>
-            </Frame>
+           
+                <SearchBar Placeholder="search Here" FontSize="Small" Margin="5" TextChanged="OnSearch"></SearchBar>
+            
             <Grid>
                 <ListView x:Name="ListItems1" SeparatorVisibility="Default"  HasUnevenRows="True">
                     <ListView.ItemTemplate>
@@ -46,7 +46,7 @@
 
                                     
                                     </Grid.ColumnDefinitions>
-                                    <Frame BindingContext="{Binding Item1}" BackgroundColor="White" OutlineColor="#bbb" HasShadow="True">
+                                    <Frame BindingContext="{Binding Item1}" IsVisible="{Binding IsVisible}" BackgroundColor="White" OutlineColor="#bbb" HasShadow="True">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*"/>

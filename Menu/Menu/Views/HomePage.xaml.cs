@@ -80,7 +80,7 @@ namespace Menu.Views
 
             else
             {
-                Detail = new NavigationPage(new Notification())
+                Detail = new NavigationPage(new CheckOut())
                 {
                     BarBackgroundColor = Color.FromHex("#DBB34A")
                 };

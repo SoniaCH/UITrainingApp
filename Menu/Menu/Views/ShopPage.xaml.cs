@@ -16,36 +16,35 @@ namespace Menu.Views
     {
 
         private List<ItemPair> itemList;
-        public List<ItemPair> ItemList
-        {
-            get { return itemList; }
-            set
-            {
-                itemList = value;
-                OnPropertyChanged();
+        public List<ItemPair> ItemList;
+        //{
+        //    get { return itemList; }
+        //    set
+        //    {
+        //        itemList = value;
+        //        OnPropertyChanged();
 
-            }
-        }
+        //    }
+        //}
 
         List<ItemPair> _item = new List<ItemPair>();
-        List<Item> _itemcategorie = new List<Item>();
         List<Item> _itemSearch = new List<Item>();
 
-        List<ItemPair> _listFiltered = new List<ItemPair>();
+        
 
 
         public List<ItemPair> LoadTheListOfItems()
         {
-            _item.Add(new ItemPair(new Item() { Id = "1", Image = "handbag.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true, Categorie="Shoes" },
-                                   new Item() { Id = "1", Image = "holder.png", Name = "Gucci Browni holder", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true,Categorie = "Bags" }));
+            _item.Add(new ItemPair(new Item() { Id = "1", Image = "glasses.png", Name = "Brownie hip sun glasses", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true, Categorie= "Accessories" },
+                                   new Item() { Id = "1", Image = "holder.png", Name = "Brownie glasses holder", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true,Categorie = "Bags" }));
 
-            _item.Add(new ItemPair(new Item() { Id = "1", Image = "handbag.png", Name = "Sun glasses", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true,Categorie = "Bags" },
-                                   new Item() { Id = "1", Image = "holder.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true, Categorie = "Bags" }));
+            _item.Add(new ItemPair(new Item() { Id = "1", Image = "handbag.png", Name = "hand bag Natural leather", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true,Categorie = "Bags" },
+                                   new Item() { Id = "1", Image = "handwatch.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true, Categorie = "Accessories" }));
 
-            _item.Add(new ItemPair(new Item() { Id = "1", Image = "handbag.png", Name = "hand bag Natural leather", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true, Categorie = "Accessories" },
-                                   new Item() { Id = "1", Image = "holder.png", Name = "Evening shoes hight heels", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true , Categorie = "Bags" }));
+            _item.Add(new ItemPair(new Item() { Id = "1", Image = "shoes.png", Name = "Evening shoes hight heels", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true, Categorie = "Shoes" },
+                                   new Item() { Id = "1", Image = "Leather.png", Name = "Belt Natural leather", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true , Categorie = "Accessories" }));
 
-            _item.Add(new ItemPair(new Item() { Id = "1", Image = "handbag.png", Name = "Concord hand watch", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true , Categorie = "Travel" },
+            _item.Add(new ItemPair(new Item() { Id = "1", Image = "holder.png", Name = "Concord hand watch", Description = "Almost new", Price = "3000.00 SAR", IsVisible = true , Categorie = "Travel" },
                 null));
 
             return _item;
@@ -70,10 +69,13 @@ namespace Menu.Views
             //TravelPart.TextColor = Color.Gray;
             //BagsPart.TextColor = Color.Gray;
             //AccessoriesPart.TextColor = Color.Gray;
-
+            ItemList = LoadTheListOfItems();
+            List<ItemPair> _listFiltered = new List<ItemPair>();
+            List<Item> _itemcategorie = new List<Item>();
 
             if (sender.Equals(ShoesPart))
             {
+               
                 _itemcategorie = new List<Item>();
                 ShoesPart.TextColor = Color.White;
                 TravelPart.TextColor = Color.Gray;
@@ -89,15 +91,18 @@ namespace Menu.Views
                 // filter the pair list and add it to an Itel list
                 foreach (ItemPair pp in ItemList)
                 {
-                    if (pp.Item1.Categorie =="Shoes")
+                    if (pp.Item1.Categorie == "Shoes")
                     {
                         _itemcategorie.Add(pp.Item1);
+                        pp.Item2.IsVisible = false;
                     }
                     if (pp.Item2.Categorie == "Shoes")
                     {
                         _itemcategorie.Add(pp.Item2);
+                        pp.Item1.IsVisible = false;
                     }
                 }
+                
                 // adding the item list to aN ITEM PAIR LIST
                 for (int i = 0; i < _itemcategorie.Count; i = i + 1)
                 {
@@ -121,7 +126,7 @@ namespace Menu.Views
             // For the travel categorie
             else if (sender.Equals(TravelPart))
             {
-                _itemcategorie = new List<Item>();
+                
                 ShoesPart.TextColor = Color.Gray;
                 TravelPart.TextColor = Color.White;
                 BagsPart.TextColor = Color.Gray;
@@ -139,12 +144,15 @@ namespace Menu.Views
                     if (pp.Item1.Categorie == "Travel")
                     {
                         _itemcategorie.Add(pp.Item1);
+                        pp.Item2.IsVisible = false;
                     }
                     if (pp.Item2.Categorie == "Travel")
                     {
                         _itemcategorie.Add(pp.Item2);
+                        pp.Item1.IsVisible = false;
                     }
                 }
+               
                 // adding the item list to aN ITEM PAIR LIST
                 for (int i = 0; i < _itemcategorie.Count; i = i + 1)
                 {
@@ -164,9 +172,11 @@ namespace Menu.Views
 
             }
 
+           
             // For the Bags categorie Bags
             else if (sender.Equals(BagsPart))
             {
+               
                 _itemcategorie = new List<Item>();
                 ShoesPart.TextColor = Color.Gray;
                 TravelPart.TextColor = Color.Gray;
@@ -211,9 +221,8 @@ namespace Menu.Views
             }
 
             // For the Bags categorie Accessories
-            else 
+            else if (sender.Equals(AccessoriesPart))
             {
-                _itemcategorie = new List<Item>();
                 ShoesPart.TextColor = Color.Gray;
                 TravelPart.TextColor = Color.Gray;
                 BagsPart.TextColor = Color.Gray;
@@ -221,10 +230,10 @@ namespace Menu.Views
 
                 TravelPart.FontSize = 18;
                 ShoesPart.FontSize = 18;
-                BagsPart.FontSize = 24;
-                AccessoriesPart.FontSize = 18;
+                BagsPart.FontSize = 18;
+                AccessoriesPart.FontSize = 24;
 
-
+                ItemList = LoadTheListOfItems();
                 // filter the pair list and add it to an Itel list
                 foreach (ItemPair pp in ItemList)
                 {
@@ -237,6 +246,7 @@ namespace Menu.Views
                         _itemcategorie.Add(pp.Item2);
                     }
                 }
+              
                 // adding the item list to aN ITEM PAIR LIST
                 for (int i = 0; i < _itemcategorie.Count; i = i + 1)
                 {
@@ -255,6 +265,7 @@ namespace Menu.Views
                 ListItems1.ItemsSource = _listFiltered;
 
             }
+            else { ItemList = LoadTheListOfItems(); }
 
         }
         #endregion
@@ -291,6 +302,7 @@ namespace Menu.Views
                     }
 
                 }
+
                 ItemList = new List<ItemPair>();
                 for (int i = 0; i <= _itemSearch.Count; i = i + 2)
                 {

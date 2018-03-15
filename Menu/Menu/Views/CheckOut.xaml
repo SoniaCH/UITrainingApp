@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Menu.Views.CheckOut">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <!--the stack that contains the cercles-->
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center">
+                <Frame x:Name="EXStep1" CornerRadius="15" BackgroundColor="Gainsboro" Padding="1,1,1,1"  HasShadow="False"
+                       WidthRequest="30" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Frame>
+                
+                <BoxView HeightRequest="0.5" WidthRequest="80" BackgroundColor="Silver" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                
+                <Frame x:Name="EXStep2" CornerRadius="15" BackgroundColor="Gainsboro" Padding="1,1,1,1"  HasShadow="False"
+                       WidthRequest="30" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Frame>
+                
+                <BoxView HeightRequest="0.5" WidthRequest="80" BackgroundColor="Silver" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                
+                <Frame x:Name="EXStep3" CornerRadius="15" BackgroundColor="Gainsboro" Padding="1,1,1,1"  HasShadow="False"
+                       WidthRequest="30" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Frame>
+            </StackLayout>
+            
+            <StackLayout x:Name="CheckOutContent" BackgroundColor="#F9FAFC" HeightRequest="450" HorizontalOptions="FillAndExpand">
+
+            <StackLayout BackgroundColor="White">
+                <Label></Label>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <Image></Image>
+                        <Label></Label>
+                    </StackLayout>
+                    <StackLayout>
+                        <Image></Image>
+                        <Label></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout BackgroundColor="White">
+                <Label></Label>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <Image></Image>
+                        <Label></Label>
+                    </StackLayout>
+                    <StackLayout>
+                        <Image></Image>
+                        <Label></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+                <Frame HasShadow="False">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Sub Total" ></Label>
+                            <Label FontSize="18" Text="9000.00" ></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Shipping" ></Label>
+                            <Label FontSize="18" Text="35.00" ></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand"  Text="VAT" ></Label>
+                            <Label FontSize="18" Text="456.00" ></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand"  Text="Total" ></Label>
+                            <Label FontSize="18" Text="9450.00 SAR" ></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+            <!--<Frame HasShadow="False" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"></Frame>-->
+            <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+                <Button Text="Back" BackgroundColor="#DBB34A" TextColor="White" FontSize="Medium"></Button>
+                <Button Text="Next" BackgroundColor="#443E43" TextColor="White" FontSize="Medium"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
