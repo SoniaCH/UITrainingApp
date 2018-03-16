@@ -5,46 +5,47 @@
   <ContentView.Content>
         <ScrollView>
             <StackLayout>
-                <StackLayout>
-                    <Label Text="Please enter Shipping adress"></Label>
-                </StackLayout>
-                
-                <Frame OutlineColor="Black" HasShadow="False" >
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+                    <Label Text="Please enter Shipping adress" Margin="10,10,10,10"></Label>
+                    <StackLayout VerticalOptions="FillAndExpand">           
+                <Frame OutlineColor="Black" HasShadow="False"  >
+                    <StackLayout HorizontalOptions="FillAndExpand" >
                     <Label Text="Reciever name" TextColor="Gray" FontSize="Small"></Label>
                     <Entry TextColor="Black" FontSize="Medium"></Entry>
                     </StackLayout>
                 </Frame>
 
-                <Frame OutlineColor="Black" HasShadow="False">
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Frame OutlineColor="Black" HasShadow="False" >
+                    <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Shipping adress" TextColor="Gray" FontSize="Small">
                         </Label>
                         <Entry TextColor="Black" FontSize="Medium"></Entry>
                     </StackLayout>
                 </Frame>
 
-                <Frame OutlineColor="Black" HasShadow="False">
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Frame OutlineColor="Black" HasShadow="False" >
+                    <StackLayout HorizontalOptions="FillAndExpand" >
                         <Label Text="City" TextColor="Gray" FontSize="Small"></Label>
                         <Entry TextColor="Black" FontSize="Medium"></Entry>
                     </StackLayout>
                 </Frame>
 
-                <Frame OutlineColor="Black" HasShadow="False">
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Frame OutlineColor="Black" HasShadow="False" >
+                    <StackLayout HorizontalOptions="FillAndExpand" >
                         <Label Text="House number" TextColor="Gray" FontSize="Small"></Label>
                         <Entry TextColor="Black" FontSize="Medium"></Entry>
                     </StackLayout>
                 </Frame>
 
-                <Frame OutlineColor="Black" HasShadow="False">
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Frame OutlineColor="Black" HasShadow="False" >
+                    <StackLayout HorizontalOptions="FillAndExpand">
                     <Label Text="Stret name" TextColor="Gray" FontSize="Small"></Label>
                     <Entry TextColor="Black" FontSize="Medium"></Entry>
                      </StackLayout>
                 </Frame>
-                
+
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
 
         </ScrollView>

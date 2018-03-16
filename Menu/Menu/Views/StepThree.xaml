@@ -4,13 +4,13 @@
              x:Class="Menu.Views.StepThree">
   <ContentView.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
 
                 <StackLayout VerticalOptions="FillAndExpand">
                     <Label Text="Please review your cart" TextColor="#443E43" FontSize="14" Margin="10,10,10,10"></Label>
                 </StackLayout>
                 <!--  The list view code -->
-            <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
             <ListView x:Name="ListItems" RowHeight="120" BackgroundColor="White" VerticalOptions="Fill">
                 <ListView.ItemTemplate>
                     <DataTemplate>
