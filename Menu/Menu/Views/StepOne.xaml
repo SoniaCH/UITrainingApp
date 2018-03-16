@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Menu.Views.StepOne">
+  <ContentView.Content>
+        <ScrollView>
+            <StackLayout x:Name="CheckOutContent">
+
+                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+                    <Label Text="How would you like to pay?" TextColor="#443E43" FontSize="14" Margin="10,10,10,10"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Grid ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="90"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="50*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame CornerRadius="2" BackgroundColor="White" Padding="0.8,0.8,0.8,0.8" HasShadow="False" 
+                                      HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" x:Name="CreditContener">
+                                <Frame x:Name="Credit" BackgroundColor="White"  HasShadow="false">
+                                   
+                                        <StackLayout >
+                                            <Image Source="creditcard.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="120"/>
+                                            <Label Text="Credit Card" VerticalOptions="Center" HorizontalOptions="Center" FontSize="10" TextColor="#443E43" />
+                                        </StackLayout>
+                                   
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SelectingPay"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="1" x:Name="BankContener" CornerRadius="2" BackgroundColor="White" Padding="0.8,0.8,0.8,0.8" HasShadow="False" 
+                                      HorizontalOptions="FillAndExpand">
+                                <Frame x:Name="Bank" BackgroundColor="White" HasShadow="False">
+                                  
+                                        <StackLayout >
+                                        <Image Source="banktransfert.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="120"/>
+                                            <Label Text="Bank Transfert" VerticalOptions="Center" HorizontalOptions="Center" FontSize="10" TextColor="#443E43" />
+                                        </StackLayout>
+                                 
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SelectingPay"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <!-- for the delevery part  -->
+                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+                    <Label Text="Delivery options : " TextColor="#443E43" FontSize="14" Margin="10,0,10,10"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Grid ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="90"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="50*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame CornerRadius="2" BackgroundColor="White" Padding="0.8,0.8,0.8,0.8" HasShadow="False" 
+                                      HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" x:Name="ExpressContener" >
+                                <Frame x:Name="Express" BackgroundColor="White" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    
+                                        <StackLayout>
+                                            <Image Source="express.png" HorizontalOptions="Center" VerticalOptions="Center"  HeightRequest="30" WidthRequest="120"/>
+                                            <Label Text="Express" VerticalOptions="Center" HorizontalOptions="Center" FontSize="10" LineBreakMode="WordWrap" TextColor="#443E43" />
+                                        </StackLayout>
+                                  
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SelectingDeliver"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Frame>
+                            <Frame CornerRadius="2" BackgroundColor="White" Padding="0.8,0.8,0.8,0.8" HasShadow="False" 
+                                      HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" x:Name="NormalContener">
+                                <Frame x:Name="Normal" BackgroundColor="White" HasShadow="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                  
+                                        <StackLayout >
+                                            <Image Source="normal.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="120"/>
+                                            <Label Text="Normal" VerticalOptions="Center" HorizontalOptions="Center" FontSize="10" 
+                                                      LineBreakMode="WordWrap" TextColor="#443E43" />
+                                        </StackLayout>
+                                
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SelectingDeliver"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+
+                </StackLayout>
+                <!-- for the text and payment part  -->
+                <Frame OutlineColor="Black">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Sub Total" ></Label>
+                            <Label FontSize="18" Text="9000.00" ></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Shipping" ></Label>
+                            <Label FontSize="18" Text="35.00" ></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="VAT" ></Label>
+                            <Label FontSize="18" Text="456.00" ></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Total" ></Label>
+                            <Label FontSize="18" Text="9450.00 SAR" ></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

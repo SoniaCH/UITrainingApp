@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Menu.Views.StepTwo">
+  <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Please enter Shipping adress"></Label>
+                </StackLayout>
+                
+                <Frame OutlineColor="Black" HasShadow="False" >
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label Text="Reciever name" TextColor="Gray" FontSize="Small"></Label>
+                    <Entry TextColor="Black" FontSize="Medium"></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame OutlineColor="Black" HasShadow="False">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="Shipping adress" TextColor="Gray" FontSize="Small">
+                        </Label>
+                        <Entry TextColor="Black" FontSize="Medium"></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame OutlineColor="Black" HasShadow="False">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="City" TextColor="Gray" FontSize="Small"></Label>
+                        <Entry TextColor="Black" FontSize="Medium"></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame OutlineColor="Black" HasShadow="False">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="House number" TextColor="Gray" FontSize="Small"></Label>
+                        <Entry TextColor="Black" FontSize="Medium"></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame OutlineColor="Black" HasShadow="False">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label Text="Stret name" TextColor="Gray" FontSize="Small"></Label>
+                    <Entry TextColor="Black" FontSize="Medium"></Entry>
+                     </StackLayout>
+                </Frame>
+                
+            </StackLayout>
+
+        </ScrollView>
+  </ContentView.Content>
+</ContentView>

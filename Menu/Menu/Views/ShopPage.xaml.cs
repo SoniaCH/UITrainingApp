@@ -28,7 +28,7 @@ namespace Menu.Views
         //}
 
         List<ItemPair> _item = new List<ItemPair>();
-        List<Item> _itemSearch = new List<Item>();
+        
 
         
 
@@ -64,11 +64,6 @@ namespace Menu.Views
         #region for the scroll tap item
         void Settings_Clicked(object sender, EventArgs e)
         {
-
-            //ShoesPart.TextColor = Color.White;
-            //TravelPart.TextColor = Color.Gray;
-            //BagsPart.TextColor = Color.Gray;
-            //AccessoriesPart.TextColor = Color.Gray;
             ItemList = LoadTheListOfItems();
             List<ItemPair> _listFiltered = new List<ItemPair>();
             List<Item> _itemcategorie = new List<Item>();
@@ -283,7 +278,7 @@ namespace Menu.Views
             else
             {
 
-                _itemSearch = new List<Item>();
+               var _itemSearch = new List<Item>();
 
                 foreach (var prod in ItemList)
                 {

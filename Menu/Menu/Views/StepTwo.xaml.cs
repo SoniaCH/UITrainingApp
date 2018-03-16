@@ -10,21 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Menu.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CheckOut : ContentPage
+	public partial class StepTwo : ContentView
 	{
-
-        public CheckOut ()
+		public StepTwo ()
 		{
 			InitializeComponent ();
-            Container.Content =new StepThree();
 		}
-
-
-        void NextStep(object sender, EventArgs e) {
-         
-
-
-        }
-
-    }
+	}
 }
