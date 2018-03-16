@@ -6,17 +6,17 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
             <!--the stack that contains the cercles-->
             <StackLayout Margin="0,10,0,0">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Frame CornerRadius="15" BackgroundColor="Gray" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
-                        <Frame CornerRadius="15" BackgroundColor="White" HasShadow="False"   WidthRequest="30" HeightRequest="30"/>
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Frame x:Name="SOneContener" CornerRadius="15" BackgroundColor="Gray" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
+                        <Frame x:Name="SOne" CornerRadius="15" BackgroundColor="White" HasShadow="False"   WidthRequest="30" HeightRequest="30"/>
                     </Frame>
                     <BoxView HeightRequest="1" WidthRequest="80" BackgroundColor="Silver" VerticalOptions="Center" Margin="-5,0,-5,0"/>
-                    <Frame CornerRadius="15" BackgroundColor="Gray" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
-                        <Frame CornerRadius="15" BackgroundColor="White" HasShadow="False"   WidthRequest="30" HeightRequest="30"/>
+                    <Frame x:Name="STwoContener" CornerRadius="15" BackgroundColor="Gray" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
+                        <Frame x:Name="STwo" CornerRadius="15" BackgroundColor="White" HasShadow="False"   WidthRequest="30" HeightRequest="30"/>
                     </Frame>
                     <BoxView HeightRequest="1" WidthRequest="80" BackgroundColor="Silver" VerticalOptions="Center" Margin="-5,0,-5,0"/>
-                    <Frame CornerRadius="15" BackgroundColor="Gray" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
-                        <Frame CornerRadius="15" BackgroundColor="White" HasShadow="False"   WidthRequest="30" HeightRequest="30"/>
+                    <Frame x:Name="SThreeContener" CornerRadius="15" BackgroundColor="Gray" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
+                        <Frame x:Name="SThree" CornerRadius="15" BackgroundColor="White" HasShadow="False"   WidthRequest="30" HeightRequest="30"/>
                     </Frame>
                 </StackLayout>
             </StackLayout>
@@ -31,13 +31,22 @@
 
             <!--The bottom of the page-->
             <StackLayout Orientation="Horizontal" Margin="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Button Text="Back" BackgroundColor="#DBB34A" TextColor="White" FontSize="Medium" HorizontalOptions="FillAndExpand" Clicked="NextStep"></Button>
-                <Button Text="Next" BackgroundColor="#443E43" TextColor="White" FontSize="Medium" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Back" BackgroundColor="#DBB34A" TextColor="White" FontSize="Medium" HorizontalOptions="FillAndExpand" WidthRequest="150" Clicked="BackStep" ></Button>
+                <Button Text="Next" BackgroundColor="#443E43" TextColor="White" FontSize="Medium" HorizontalOptions="FillAndExpand" WidthRequest="150" Clicked="NextStep"></Button>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" BackgroundColor="#443E43" >
                 <Image Margin="0,10,0,10"  Source="home.png" WidthRequest="15" HorizontalOptions="FillAndExpand"></Image>
-                <Image Margin="0,10,0,10"  Source="search.png" WidthRequest="15" HorizontalOptions="FillAndExpand"></Image>
-                <Image Margin="0,15,0,15"  Source="dots.png" WidthRequest="1" HeightRequest="1" HorizontalOptions="FillAndExpand"></Image>
+                <Image Margin="0,10,0,10"  Source="search.png" WidthRequest="15" HorizontalOptions="FillAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToSearchPage"></TapGestureRecognizer>
+                    </Image.GestureRecognizers> 
+                    
+                </Image>
+                <Image Margin="0,15,0,15"  Source="dots.png" WidthRequest="1" HeightRequest="1" HorizontalOptions="FillAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToHomePage"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Image Margin="0,10,0,10"  Source="carr.png" WidthRequest="15" HorizontalOptions="FillAndExpand"></Image>
                 <Image Margin="0,10,0,10"  Source="account.png" WidthRequest="15" HorizontalOptions="FillAndExpand"></Image>
             </StackLayout>

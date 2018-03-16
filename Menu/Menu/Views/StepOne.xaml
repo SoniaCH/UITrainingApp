@@ -112,8 +112,8 @@
                             <Label FontSize="18" Text="456.00" ></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Total" ></Label>
-                            <Label FontSize="18" Text="9450.00 SAR" ></Label>
+                            <Label FontSize="19" HorizontalOptions="StartAndExpand"  Text="Total" ></Label>
+                            <Label FontSize="19" Text="9450.00 SAR" ></Label>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

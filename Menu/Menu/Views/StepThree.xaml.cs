@@ -51,6 +51,9 @@ namespace Menu.Views
         //DeleteItem
         void DeleteItem(object sender, EventArgs e)
         {
+            var Deleted = new Item();
+            
+
             
 
         }
