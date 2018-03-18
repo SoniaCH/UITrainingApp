@@ -29,9 +29,9 @@ namespace Menu.Views
 
         public List<Item> LoadTheListOfItems()
         {
-            _item.Add(new Item() { Id = "1", Image = "handbag.png", Name = "Gucci hand bag light brown", Description = "New Prada", Price = "3000.00 SAR", Close="closeg.png" });
-            _item.Add(new Item() { Id = "2", Image = "glasses.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", Close = "closeg.png" });
-            _item.Add(new Item() { Id = "3", Image = "holder.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", Close = "closeg.png" });
+            _item.Add(new Item() { Id = "1", Image = "handbag.png", Name = "Gucci hand bag light brown", Description = "New Prada", Price = "3000.00 SAR", Close= "closemark.png" });
+            _item.Add(new Item() { Id = "2", Image = "glasses.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", Close = "closemark.png" });
+            _item.Add(new Item() { Id = "3", Image = "holder.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", Close = "closemark.png" });
 
             return _item;
         }

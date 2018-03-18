@@ -13,25 +13,13 @@ namespace Menu.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ShopPage : ContentPage
-    {
-
-        private List<ItemPair> itemList;
+    {       
         public List<ItemPair> ItemList;
-        //{
-        //    get { return itemList; }
-        //    set
-        //    {
-        //        itemList = value;
-        //        OnPropertyChanged();
-
-        //    }
-        //}
-
         List<ItemPair> _item = new List<ItemPair>();
-        
 
-        
 
+
+        #region methods tol load the list 
 
         public List<ItemPair> LoadTheListOfItems()
         {
@@ -50,7 +38,7 @@ namespace Menu.Views
             return _item;
         }
 
-
+        #endregion
 
         public ShopPage()
         {
@@ -327,7 +315,6 @@ namespace Menu.Views
                // ItemList = LoadTheListOfItems();
                 ListItems1.ItemsSource = ItemList;
             }
-
         }
         #endregion
 
@@ -336,6 +323,9 @@ namespace Menu.Views
         private void OnSearch(object sender, TextChangedEventArgs e)
         {
 
+            List<ItemPair> _listFiltered = new List<ItemPair>();
+           
+
             if (string.IsNullOrEmpty(e.NewTextValue))
             {
                 ListItems1.ItemsSource = ItemList;
@@ -343,43 +333,50 @@ namespace Menu.Views
 
             else
             {
-
-               var _itemSearch = new List<Item>();
+                List<Item> _itemSearch = new List<Item>();
 
                 foreach (var prod in ItemList)
                 {
 
 
-                    if (prod.Item1.Name.ToLower().Contains(e.NewTextValue.ToLower()))
+                    if (prod.Item1.Name.ToLower().Contains(e.NewTextValue))
                     {
                         _itemSearch.Add(prod.Item1);
-                        prod.Item2.IsVisible = false;
                     }
 
-                    if (prod.Item2.Name.ToLower().Contains(e.NewTextValue.ToLower()))
+                    try
                     {
-                        _itemSearch.Add(prod.Item2);
-                        prod.Item1.IsVisible = false;
-                    }
 
+                        if (prod.Item2.Name.ToLower().StartsWith(e.NewTextValue))
+                        {
+                            _itemSearch.Add(prod.Item2);
+                            //prod.Item1.IsVisible = false;
+                        }
+
+                    }
+                    catch 
+                    {
+                       
+                    }
+                   
                 }
 
-                ItemList = new List<ItemPair>();
-                for (int i = 0; i <= _itemSearch.Count; i = i + 2)
+                
+                for (int i = 0; i <= _itemSearch.Count; i = i + 1)
                 {
                     if (i < _itemSearch.Count - 1)
                     {
                         ItemPair pp = new ItemPair(_itemSearch[i], _itemSearch[i + 1]);
-                        ItemList.Add(pp);
+                        _listFiltered.Add(pp);
                     }
                     else if (i == _itemSearch.Count - 1)
                     {
                         ItemPair pp = new ItemPair(_itemSearch[i], null);
-                        ItemList.Add(pp);
+                        _listFiltered.Add(pp);
                     }
                 }
 
-                ListItems1.ItemsSource = ItemList;
+                ListItems1.ItemsSource = _listFiltered;
 
             }
 

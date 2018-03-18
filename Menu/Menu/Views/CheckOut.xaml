@@ -49,9 +49,9 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                <Label Text="1" HorizontalOptions="Start"></Label>
-                <Label Text="2" HorizontalOptions="Center"></Label>
-                <Label Text="Confirm" HorizontalOptions="End"></Label>
+                <Label Text="1" Margin="20" HorizontalOptions="Start"></Label>
+                <Label Text="2" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="Confirm" HorizontalOptions="Center"></Label>
             </StackLayout>
 
 
