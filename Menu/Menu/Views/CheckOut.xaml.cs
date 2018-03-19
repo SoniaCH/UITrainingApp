@@ -76,6 +76,7 @@ namespace Menu.Views
                 TextOne.TextColor = Color.Black;
                 TextTwo.TextColor = Color.Black;
                 TextConfirm.TextColor = Color.Black;
+                BtnNext.Text = "Pay";
 
             }
         }
@@ -101,6 +102,7 @@ namespace Menu.Views
                 TextOne.TextColor = Color.Black;
                 TextTwo.TextColor = Color.Black;
                 TextConfirm.TextColor = Color.Gray;
+                BtnNext.Text = "Next";
 
             }
             else if (TwoStart == true)

@@ -56,7 +56,7 @@ namespace Menu.Views
 
             else
             {
-                ListItems.ItemsSource = ItemList.Where(x => x.Name.Contains(e.NewTextValue));
+                ListItems.ItemsSource = ItemList.Where(x => x.Name.ToLower().Contains(e.NewTextValue));
             }
         }
         #endregion

@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Menu;assembly=Menu"
              x:Class="Menu.Views.StepTwo">
+    <!--Style off the page -->
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="SmallLabelStyle"
+                   TargetType="Label">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+            <Style x:Key="BigLabelStyle"
+                   TargetType="Entry">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Placeholder" Value="Write here"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <!-- End of the styles -->
   <ContentView.Content>
         <ScrollView>
             <StackLayout>
@@ -10,8 +28,8 @@
                     <StackLayout VerticalOptions="FillAndExpand">
 
                         <StackLayout HorizontalOptions="FillAndExpand" Margin="15,0,15,0" >
-                            <Label Text="Reciever name" TextColor="Gray" FontSize="12"/>
-                            <Entry TextColor="Black" FontSize="16"/>
+                            <Label Text="Reciever name" Style="{StaticResource SmallLabelStyle}"/>
+                            <local:MyEntry Style="{StaticResource BigLabelStyle}"/>
                         </StackLayout>
 
                         <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
@@ -19,8 +37,8 @@
                         </StackLayout>
 
                         <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0">
-                            <Label Text="Shipping adress" TextColor="Gray" FontSize="12"/>
-                            <Entry TextColor="Black" FontSize="16"/>
+                            <Label Text="Shipping adress" Style="{StaticResource SmallLabelStyle}"/>
+                            <local:MyEntry Style="{StaticResource BigLabelStyle}"/>
                         </StackLayout>
 
                         <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
@@ -28,8 +46,8 @@
                         </StackLayout>
 
                         <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0" >
-                            <Label Text="City" TextColor="Gray" FontSize="12"/>
-                            <Entry TextColor="Black" FontSize="16"/>
+                            <Label Text="City" Style="{StaticResource SmallLabelStyle}"/>
+                            <local:MyEntry Style="{StaticResource BigLabelStyle}"/>
                         </StackLayout>
 
                         <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
@@ -37,8 +55,8 @@
                         </StackLayout>
 
                         <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0" >
-                            <Label Text="House number" TextColor="Gray" FontSize="12"/>
-                            <Entry TextColor="Black" FontSize="16"/>
+                            <Label Text="House number" Style="{StaticResource SmallLabelStyle}"/>
+                            <local:MyEntry Style="{StaticResource BigLabelStyle}"/>
                         </StackLayout>
 
                         <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
@@ -46,8 +64,8 @@
                         </StackLayout>
 
                         <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0">
-                            <Label Text="Stret name" TextColor="Gray" FontSize="12"/>
-                            <Entry TextColor="Black" FontSize="16"/>
+                            <Label Text="Street name" Style="{StaticResource SmallLabelStyle}"/>
+                            <local:MyEntry Style="{StaticResource BigLabelStyle}"/>
                         </StackLayout>
           
 
