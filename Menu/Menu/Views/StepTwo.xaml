@@ -6,43 +6,50 @@
         <ScrollView>
             <StackLayout>
                 <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
-                    <Label Text="Please enter Shipping adress" Margin="10,10,10,10"></Label>
-                    <StackLayout VerticalOptions="FillAndExpand">           
-                <Frame OutlineColor="Black" HasShadow="False"  >
-                    <StackLayout HorizontalOptions="FillAndExpand" >
-                    <Label Text="Reciever name" TextColor="Gray" FontSize="Small"></Label>
-                    <Entry TextColor="Black" FontSize="Medium"></Entry>
-                    </StackLayout>
-                </Frame>
+                    <Label Text="Please enter Shipping adress" Margin="15,10,0,10" TextColor="Black" FontSize="14"/>
+                    <StackLayout VerticalOptions="FillAndExpand">
 
-                <Frame OutlineColor="Black" HasShadow="False" >
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Shipping adress" TextColor="Gray" FontSize="Small">
-                        </Label>
-                        <Entry TextColor="Black" FontSize="Medium"></Entry>
-                    </StackLayout>
-                </Frame>
+                        <StackLayout HorizontalOptions="FillAndExpand" Margin="15,0,15,0" >
+                            <Label Text="Reciever name" TextColor="Gray" FontSize="12"/>
+                            <Entry TextColor="Black" FontSize="16"/>
+                        </StackLayout>
 
-                <Frame OutlineColor="Black" HasShadow="False" >
-                    <StackLayout HorizontalOptions="FillAndExpand" >
-                        <Label Text="City" TextColor="Gray" FontSize="Small"></Label>
-                        <Entry TextColor="Black" FontSize="Medium"></Entry>
-                    </StackLayout>
-                </Frame>
+                        <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
+                            <BoxView HeightRequest="0.5" BackgroundColor="Silver"/>
+                        </StackLayout>
 
-                <Frame OutlineColor="Black" HasShadow="False" >
-                    <StackLayout HorizontalOptions="FillAndExpand" >
-                        <Label Text="House number" TextColor="Gray" FontSize="Small"></Label>
-                        <Entry TextColor="Black" FontSize="Medium"></Entry>
-                    </StackLayout>
-                </Frame>
+                        <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0">
+                            <Label Text="Shipping adress" TextColor="Gray" FontSize="12"/>
+                            <Entry TextColor="Black" FontSize="16"/>
+                        </StackLayout>
 
-                <Frame OutlineColor="Black" HasShadow="False" >
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                    <Label Text="Stret name" TextColor="Gray" FontSize="Small"></Label>
-                    <Entry TextColor="Black" FontSize="Medium"></Entry>
-                     </StackLayout>
-                </Frame>
+                        <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
+                            <BoxView HeightRequest="0.5" BackgroundColor="Silver"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0" >
+                            <Label Text="City" TextColor="Gray" FontSize="12"/>
+                            <Entry TextColor="Black" FontSize="16"/>
+                        </StackLayout>
+
+                        <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
+                            <BoxView HeightRequest="0.5" BackgroundColor="Silver"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0" >
+                            <Label Text="House number" TextColor="Gray" FontSize="12"/>
+                            <Entry TextColor="Black" FontSize="16"/>
+                        </StackLayout>
+
+                        <StackLayout Padding="0,20,0,0" HorizontalOptions="Fill" Margin="15,0,15,0">
+                            <BoxView HeightRequest="0.5" BackgroundColor="Silver"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand"  Margin="15,0,15,0">
+                            <Label Text="Stret name" TextColor="Gray" FontSize="12"/>
+                            <Entry TextColor="Black" FontSize="16"/>
+                        </StackLayout>
+          
 
                     </StackLayout>
                 </StackLayout>

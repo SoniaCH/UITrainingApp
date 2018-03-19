@@ -22,9 +22,9 @@ namespace Menu.Views
 		{
             allItems = new List<Item>
             {
-            new Item() { Id = "1", Image = "handbag.png", Name = "Gucci hand bag light brown", Description = "New Prada", Price = "3000.00 SAR" },
-            new Item() { Id = "2", Image = "glasses.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR" },
-           new Item() { Id = "3", Image = "holder.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR" },
+            new Item() { Id = "1", Image = "handbag.png", Name = "Gucci hand bag light brown", Description = "New ", Price = "3000.00 SAR",Mark="Prada" },
+            new Item() { Id = "2", Image = "glasses.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", Mark="Prada" },
+           new Item() { Id = "3", Image = "holder.png", Name = "Gucci hand bag light brown", Description = "Almost new", Price = "3000.00 SAR", Mark="Prada" },
             };
 
             InitializeComponent ();

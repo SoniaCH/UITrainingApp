@@ -13,7 +13,8 @@ namespace Menu.Model
         public string Price { get; set; }
         public bool IsVisible { get; set; }
         public string Categorie { get; set; }
-      
+        public string Mark { get; set; }
+
 
     }
 }

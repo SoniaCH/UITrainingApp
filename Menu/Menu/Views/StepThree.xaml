@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Menu.Views.StepThree">
   <ContentView.Content>
+        <StackLayout>
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand">
 
@@ -10,48 +11,59 @@
                     <Label Text="Please review your cart" TextColor="#443E43" FontSize="14" Margin="10,10,10,10"></Label>
                 </StackLayout>
                 <!--  The list view code -->
-            <StackLayout VerticalOptions="Center" >
-            <ListView x:Name="ListItems" RowHeight="120" BackgroundColor="White" VerticalOptions="FillAndExpand">
+           
+            <ListView x:Name="ListItems" RowHeight="90" BackgroundColor="White" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
-                                    <Button CommandParameter="{Binding Id}" Clicked="DeleteClicked" BorderColor="Transparent" BackgroundColor="Transparent" Text=" x " 
-                                            TextColor="Silver" FontSize="10" ></Button>
-                                    <Image Margin="5,0,5,0" Source="{Binding Image}" HeightRequest="80" WidthRequest="80"/>
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
-                                        <Label Text="{Binding Name}" TextColor="Black"   LineBreakMode="WordWrap"/>
-                                        <Label Text="{Binding Description}" TextColor="Gray" />
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+                                        <Button CommandParameter="{Binding Id}" Clicked="DeleteClicked" BorderColor="Transparent" Margin="0,30,0,30" WidthRequest="30"
+                                                BackgroundColor="Transparent" Text=" x " TextColor="Silver" FontSize="12" FontAttributes="Bold"/>
+                                    
+                                        <Image Source="{Binding Image}" HeightRequest="80" WidthRequest="80"/>
+
+
+                                         <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="5,0,0,0">
+                                            <Label Text="{Binding Name}" TextColor="Black" FontSize="12"   LineBreakMode="WordWrap"/>
+                                            <Label Text="{Binding Description}" TextColor="Gray" FontSize="12" LineBreakMode="WordWrap" />
+                                            <Label Text="{Binding Mark}" TextColor="Gray" FontSize="12" LineBreakMode="WordWrap" />
+                                        </StackLayout>
+
+                                        <Label Text="{Binding Price}" TextColor="Black" VerticalOptions="Center" LineBreakMode="NoWrap" FontSize="12"/>
+
                                     </StackLayout>
-                                    <Label Text="{Binding Price}" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                </StackLayout>
                             </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+          
             </StackLayout>
-                <!-- for the text and payment part  -->
-            <Frame OutlineColor="Black">
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Sub Total" ></Label>
-                        <Label FontSize="18" Text="9000.00" ></Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Shipping" ></Label>
-                        <Label FontSize="18" Text="35.00" ></Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="VAT" ></Label>
-                        <Label FontSize="18" Text="456.00" ></Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label FontSize="18" HorizontalOptions="StartAndExpand" Text="Total" ></Label>
-                        <Label FontSize="18" Text="9450.00 SAR" ></Label>
-                    </StackLayout>
-                </StackLayout>
-            </Frame>
-        </StackLayout>
         </ScrollView>
+        <!-- for the text and payment part  -->
+            <StackLayout HorizontalOptions="Fill" Margin="10,0,10,0">
+                <BoxView HeightRequest="0.5" BackgroundColor="Silver"></BoxView>
+            </StackLayout>
+
+            <StackLayout Margin="10,0,10,0">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label FontSize="12" HorizontalOptions="StartAndExpand" Text="Subtotal" TextColor="Black"/>
+                    <Label FontSize="12" Text="9000.00" TextColor="Black"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label FontSize="12" HorizontalOptions="StartAndExpand" Text="Shipping" TextColor="Black"/>
+                    <Label FontSize="12" Text="35.00" TextColor="Black"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label FontSize="12" HorizontalOptions="StartAndExpand" Text="VAT" TextColor="Black"/>
+                    <Label FontSize="12" Text="456.00" TextColor="Black"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label FontSize="12" HorizontalOptions="StartAndExpand" Text="Total" FontAttributes="Bold" TextColor="Black"/>
+                    <Label FontSize="12" Text="9450.00 SAR"  FontAttributes="Bold" TextColor="Black"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        
     </ContentView.Content>
 </ContentView>
