@@ -26,17 +26,17 @@ namespace Menu.Views
             OneStart = true;
             Container.Content =new StepOne();
 
-            #region for the first cercle
+            #region for the first Step
             SOne.BackgroundColor = Color.White;
             SOneContener.BackgroundColor = Color.Black;
             STwo.BackgroundColor = Color.White;
             STwoContener.BackgroundColor = Color.Gray;
             SThree.BackgroundColor = Color.White;
             SThreeContener.BackgroundColor = Color.Gray;
+            TextOne.TextColor = Color.Black;
+            TextTwo.TextColor = Color.Gray;
+            TextConfirm.TextColor = Color.Gray;
             #endregion
-
-
-
 
         }
 
@@ -56,6 +56,9 @@ namespace Menu.Views
                 STwoContener.BackgroundColor = Color.Black;
                 SThree.BackgroundColor = Color.White;
                 SThreeContener.BackgroundColor = Color.Gray;
+                TextOne.TextColor = Color.Black;
+                TextTwo.TextColor = Color.Black;
+                TextConfirm.TextColor = Color.Gray;
 
             }
             else if (TwoStart == true)
@@ -70,6 +73,9 @@ namespace Menu.Views
                 STwoContener.BackgroundColor = Color.FromHex("#443E43");
                 SThree.BackgroundColor = Color.White;
                 SThreeContener.BackgroundColor = Color.Black;
+                TextOne.TextColor = Color.Black;
+                TextTwo.TextColor = Color.Black;
+                TextConfirm.TextColor = Color.Black;
 
             }
         }
@@ -92,6 +98,9 @@ namespace Menu.Views
                 STwoContener.BackgroundColor = Color.Black;
                 SThree.BackgroundColor = Color.White;
                 SThreeContener.BackgroundColor = Color.Gray;
+                TextOne.TextColor = Color.Black;
+                TextTwo.TextColor = Color.Black;
+                TextConfirm.TextColor = Color.Gray;
 
             }
             else if (TwoStart == true)
@@ -107,6 +116,9 @@ namespace Menu.Views
                 STwoContener.BackgroundColor = Color.Gray;
                 SThree.BackgroundColor = Color.White;
                 SThreeContener.BackgroundColor = Color.Gray;
+                TextOne.TextColor = Color.Black;
+                TextTwo.TextColor = Color.Gray;
+                TextConfirm.TextColor = Color.Gray;
 
             }
 
@@ -122,8 +134,8 @@ namespace Menu.Views
         {
             this.Navigation.PushAsync(new ShopSearch());
         }
-
         #endregion
+
         #region for going to the search page
         void GoToHomePage(object sender, EventArgs e)
         {

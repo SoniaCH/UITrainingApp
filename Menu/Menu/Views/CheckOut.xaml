@@ -49,9 +49,9 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                <Label Text="1" Margin="20" HorizontalOptions="Start"></Label>
-                <Label Text="2" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="Confirm" HorizontalOptions="Center"></Label>
+                <Label x:Name="TextOne" Text="1" Margin="50,0,50,0" HorizontalOptions="Start"></Label>
+                <Label x:Name="TextTwo" Text="2" Margin="60,0,40,0" HorizontalOptions="CenterAndExpand"></Label>
+                <Label x:Name="TextConfirm" Text="Confirm" Margin="50,0,30,0" HorizontalOptions="Center"></Label>
             </StackLayout>
 
 

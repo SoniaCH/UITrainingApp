@@ -10,17 +10,14 @@
                     <Label Text="Please review your cart" TextColor="#443E43" FontSize="14" Margin="10,10,10,10"></Label>
                 </StackLayout>
                 <!--  The list view code -->
-            <StackLayout VerticalOptions="FillAndExpand" >
-            <ListView x:Name="ListItems" RowHeight="120" BackgroundColor="White" VerticalOptions="Fill">
+            <StackLayout VerticalOptions="Center" >
+            <ListView x:Name="ListItems" RowHeight="120" BackgroundColor="White" VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Margin="5,0,5,0" Source="{Binding Close}" HeightRequest="10" WidthRequest="10">
-                                            <Image.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="DeleteItem"></TapGestureRecognizer>
-                                            </Image.GestureRecognizers> 
-                                     </Image>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                                    <Button CommandParameter="{Binding Id}" Clicked="DeleteClicked" BorderColor="Transparent" BackgroundColor="Transparent" Text=" x " 
+                                            TextColor="Silver" FontSize="10" ></Button>
                                     <Image Margin="5,0,5,0" Source="{Binding Image}" HeightRequest="80" WidthRequest="80"/>
                                     <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                                         <Label Text="{Binding Name}" TextColor="Black"   LineBreakMode="WordWrap"/>
