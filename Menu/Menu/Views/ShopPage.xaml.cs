@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,55 @@ namespace Menu.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ShopPage : ContentPage
-    {       
+    {
+
+        #region the property used for the tap on the scroll
+
+        protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(backingStore, value))
+                return false;
+
+            backingStore = value;
+            onChanged?.Invoke();
+            OnPropertyChanged(propertyName);
+            return true;
+        }
+
+        bool tab1Visible = true;
+        public bool Tab1Visible
+        {
+            get { return tab1Visible; }
+            set { SetProperty(ref tab1Visible, value); }
+        }
+
+
+        bool tab2Visible = false;
+        public bool Tab2Visible
+        {
+            get { return tab2Visible; }
+            set { SetProperty(ref tab2Visible, value); }
+        }
+
+
+        bool tab3Visible = false;
+        public bool Tab3Visible
+        {
+            get { return tab3Visible; }
+            set { SetProperty(ref tab3Visible, value); }
+        }
+
+        bool tab4Visible = false;
+        public bool Tab4Visible
+        {
+            get { return tab4Visible; }
+            set { SetProperty(ref tab4Visible, value); }
+        }
+
+
+        #endregion
+
+
         public List<ItemPair> ItemList;
         List<ItemPair> _item = new List<ItemPair>();
 
@@ -43,6 +92,7 @@ namespace Menu.Views
         public ShopPage()
         {
             InitializeComponent();
+            BindingContext = this;
             ItemList = LoadTheListOfItems();
             ListItems1.ItemsSource = ItemList;
 
@@ -124,7 +174,7 @@ namespace Menu.Views
             // For the travel categorie
             else if (sender.Equals(TravelPart))
             {
-                _itemcategorie = new List<Item>();
+               
                 #region changement de font of the text in the scroll
                 ShoesPart.TextColor = Color.Gray;
                 TravelPart.TextColor = Color.White;
@@ -136,8 +186,8 @@ namespace Menu.Views
                 BagsPart.FontSize = 18;
                 AccessoriesPart.FontSize = 18;
                 #endregion
+                _itemcategorie = new List<Item>();
 
-              
                 // filter the pair list and add it to an Itel list
                 foreach (ItemPair pp in ItemList)
                 {
@@ -191,7 +241,7 @@ namespace Menu.Views
             // For the Bags categorie Bags
             else if (sender.Equals(BagsPart))
             {               
-                _itemcategorie = new List<Item>();
+              
                 ShoesPart.TextColor = Color.Gray;
                 TravelPart.TextColor = Color.Gray;
                 BagsPart.TextColor = Color.White;
@@ -202,6 +252,7 @@ namespace Menu.Views
                 BagsPart.FontSize = 24;
                 AccessoriesPart.FontSize = 18;
 
+                _itemcategorie = new List<Item>();
                 // filter the pair list and add it to an Itel list
                 foreach (ItemPair pp in ItemList)
                 {
@@ -252,7 +303,7 @@ namespace Menu.Views
             // For the Bags categorie Accessories
             else if (sender.Equals(AccessoriesPart))
             {
-                _itemcategorie = new List<Item>();
+               
                 ShoesPart.TextColor = Color.Gray;
                 TravelPart.TextColor = Color.Gray;
                 BagsPart.TextColor = Color.Gray;
@@ -263,7 +314,7 @@ namespace Menu.Views
                 BagsPart.FontSize = 18;
                 AccessoriesPart.FontSize = 24;
 
-                
+                _itemcategorie = new List<Item>();
                 // filter the pair list and add it to an Itel list
                 foreach (ItemPair pp in ItemList)
                 {
@@ -317,6 +368,246 @@ namespace Menu.Views
             }
         }
         #endregion
+
+        #region using the converter for the scroll tap
+        public ICommand TabTappedCommand
+        {
+            get
+            {
+                return new Command((e) =>
+                {
+                    List<ItemPair> _listFiltered = new List<ItemPair>();
+                    List<Item> _itemcategorie = new List<Item>();
+
+                    if (int.Parse(e.ToString()) == 1)
+                    {
+                        #region for the list search
+                        _itemcategorie = new List<Item>();
+                        // filter the pair list and add it to an Itel list
+                        foreach (ItemPair pp in ItemList)
+                        {
+                            if (pp.Item1.Categorie == "Shoes")
+                            {
+                                _itemcategorie.Add(pp.Item1);                     
+                            }
+                            if (pp.Item2.Categorie == "Shoes")
+                            {
+                                _itemcategorie.Add(pp.Item2);
+                            }
+                        }
+                        #region adding the item list to aN ITEM PAIR LIST
+                        if (_itemcategorie.Count % 2 == 0)
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                                else if (i == _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], null);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        #endregion
+
+                        ListItems1.ItemsSource = _listFiltered;
+                        #endregion
+
+                        Tab1Visible = true;
+                        Tab2Visible = false;
+                        Tab3Visible = false;
+                        Tab4Visible = false;
+                    }
+                    else if (int.Parse(e.ToString()) == 2)
+                    {
+                        #region for the list search
+                        _itemcategorie = new List<Item>();
+
+                        // filter the pair list and add it to an Itel list
+                        foreach (ItemPair pp in ItemList)
+                        {
+                            if (pp.Item1.Categorie == "Travel")
+                            {
+                                _itemcategorie.Add(pp.Item1);
+                                //  pp.Item2.IsVisible = false;
+                            }
+                            if (pp.Item2.Categorie == "Travel")
+                            {
+                                _itemcategorie.Add(pp.Item2);
+                                //pp.Item1.IsVisible = false;
+                            }
+                        }
+                        #region adding the item list to aN ITEM PAIR LIST
+                        if (_itemcategorie.Count % 2 == 0)
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                                else if (i == _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], null);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        #endregion
+
+                        ListItems1.ItemsSource = _listFiltered;
+                        #endregion
+
+                        Tab1Visible = false;
+                        Tab2Visible = true;
+                        Tab3Visible = false;
+                        Tab4Visible = false;
+                    }
+                    else if (int.Parse(e.ToString()) == 3)
+                    {
+                        #region for the list search
+                        _itemcategorie = new List<Item>();
+                        // filter the pair list and add it to an Itel list
+                        foreach (ItemPair pp in ItemList)
+                        {
+                            if (pp.Item1.Categorie == "Bags")
+                            {
+                                _itemcategorie.Add(pp.Item1);
+                            }
+                            if (pp.Item2.Categorie == "Bags")
+                            {
+                                _itemcategorie.Add(pp.Item2);
+                            }
+                        }
+
+                        #region adding the item list to aN ITEM PAIR LIST
+                        if (_itemcategorie.Count % 2 == 0)
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                                else if (i == _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], null);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        #endregion
+
+                        ListItems1.ItemsSource = _listFiltered;
+                        #endregion
+
+                        Tab1Visible = false;
+                        Tab2Visible = false;
+                        Tab3Visible = true;
+                        Tab4Visible = false;
+                    }
+                    else if (int.Parse(e.ToString()) == 4)
+                    {
+
+                        #region for the list serach
+                        _itemcategorie = new List<Item>();
+                        // filter the pair list and add it to an Itel list
+                        foreach (ItemPair pp in ItemList)
+                        {
+                            if (pp.Item1.Categorie == "Accessories")
+                            {
+                                _itemcategorie.Add(pp.Item1);
+                            }
+                            if (pp.Item2.Categorie == "Accessories")
+                            {
+                                _itemcategorie.Add(pp.Item2);
+                            }
+                        }
+
+                        #region adding the item list to aN ITEM PAIR LIST
+                        if (_itemcategorie.Count % 2 == 0)
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < _itemcategorie.Count; i = i + 1)
+                            {
+                                if (i < _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], _itemcategorie[i + 1]);
+                                    _listFiltered.Add(pp);
+                                }
+                                else if (i == _itemcategorie.Count - 1)
+                                {
+                                    ItemPair pp = new ItemPair(_itemcategorie[i], null);
+                                    _listFiltered.Add(pp);
+                                }
+                            }
+                        }
+                        #endregion
+
+                        ListItems1.ItemsSource = _listFiltered;
+
+                        #endregion
+
+                        Tab1Visible = false;
+                        Tab2Visible = false;
+                        Tab3Visible = false;
+                        Tab4Visible = true;
+                    }
+                });
+            }
+
+        }
+        #endregion
+
 
         #region for the search bar 
 
